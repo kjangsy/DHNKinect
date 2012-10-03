@@ -155,9 +155,7 @@ toc;
 gen_dat(isnan(gen_dat)) = 0;
 a = mat2cell(gen_dat, size(gen_dat, 1), ones(1,size(gen_dat, 2)));
 b = cellfun(@(x) smooth(x), a, 'UniformOutput', false);
-gen_dat = cell2mat(b);
-Kinect2bvh(gen_dat, filename);
-
+Kinect2bvh(gen_dat, filename); 
 
 %%
 addpath('MOCAP_Toolbox');

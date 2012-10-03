@@ -115,7 +115,7 @@ for gen_idx=1:num_gen-step+1
     importance = hn(:,1) ./ (sum_se + 0.0001);
     [~,sorted_idx] = sort(importance);
 
-    rank_num = 1000;
+    rank_num = 5000;
     ranked_idx = sorted_idx(end-rank_num+1:end);
     ranked_importance = importance(ranked_idx);
     sum_ranked_importance = ranked_importance' * ~isnan(hn(ranked_idx,2:end));

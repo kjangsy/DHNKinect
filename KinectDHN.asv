@@ -11,7 +11,7 @@ num_gen = 100;
 %data1 = Data('shake_2t.txt');
 % data1 = Data('wave_test_1.txt');
 % data1 = Data('test.txt');
-data1 = Data('clap_9.txt');
+data1 = Data('wa_1c.txt');
 
 %% Data Sampling
 num_data = data1.len-step+1;

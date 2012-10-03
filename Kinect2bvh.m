@@ -1,4 +1,4 @@
-function Kinect2bvh(newdata, frm_num)
+function Kinect2bvh(newdata, outname)
 
 
 %% Data read
@@ -15,7 +15,7 @@ action_size = size(newdata, 1);
 
 %% Write header
 fin = fopen('Kinect.bvh');
-fout = fopen('KinectMove.bvh', 'w');
+fout = fopen([outname  '.bvh'], 'w');
 header = fread(fin);
 fwrite(fout, header);
 

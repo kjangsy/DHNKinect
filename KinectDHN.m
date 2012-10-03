@@ -11,7 +11,8 @@ num_gen = 100;
 %data1 = Data('shake_2t.txt');
 % data1 = Data('wave_test_1.txt');
 % data1 = Data('test.txt');
-data1 = Data('clap_9.txt');
+filename = 'twowave';
+data1 = Data([filename  '.txt']);
 
 %% Data Sampling
 num_data = data1.len-step+1;
@@ -95,7 +96,9 @@ fprintf('sampling completed\n');
 to_fill = step;
 
 gen_seq = zeros(num_gen, dim);
-gen_seq(1:step-1,:) = data1.norm_data(1:step-1,:);
+% gen_seq(1:step-1,:) = data1.norm_data(1:step-1,:);
+gen_seq(1:step-1,:) = data1.norm_data(135:136,:);
+
 tic;
 for gen_idx=1:num_gen-step+1
     % build matcher
@@ -146,9 +149,9 @@ toc;
 % end
 
 %% BVH 파일로 출력
-Kinect2bvh(gen_dat, 0); %% integer 무시
+Kinect2bvh(gen_dat, filename); 
 
 %%
 addpath('MOCAP_Toolbox');
 addpath('NDLUTIL');
-bvhPlayFile('KinectMove.bvh');
+bvhPlayFile([filename, '.bvh']);

@@ -126,4 +126,4 @@ for i = 1:dim
 end
 %%
 matname = strrep(filename, '.txt', ['seed', int2str(seed), '.mat']);
-save(matname, 'gen_dat');
+save(matname);

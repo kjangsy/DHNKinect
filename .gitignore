@@ -1,3 +1,5 @@
-.jpg
-.asv
-.m~
+*.jpg
+*.asv
+*.m~
+*.bvh
+*.mat

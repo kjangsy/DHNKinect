@@ -14,7 +14,7 @@ action = newdata;
 action_size = size(newdata, 1);
 
 %% Write header
-fin = fopen('Kinect.bvh');
+fin = fopen('kinect.bvh');
 fout = fopen(outname, 'w');
 header = fread(fin);
 fwrite(fout, header);
